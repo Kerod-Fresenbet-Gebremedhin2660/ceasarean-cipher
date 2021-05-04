@@ -1,28 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="nav_css.css">
-    <link rel="stylesheet" href="textillate/assets/animate.css">
-
-    <script src="js.js"></script>
-
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="textillate/assets/jquery.lettering.js"></script>
-
-
-
-    <title>Assignment - Caesar Cipher</title>
+    <link rel="stylesheet" href="css.css">
+    <title>Caesar Cipher</title>
 </head>
-
 <body>
-<nav class="navbar">
+    <nav class="navbar">
     <ul class="navbar-nav">
         <li class="logo">
             <a href="index.html" class="nav-link">
@@ -92,54 +77,58 @@
         </li>
     </ul>
 </nav>
-
-    <label class="radio" style="margin-left: 20%;">
-        <span class="radio__input">
-        <input type="radio" id="radio1" name="radio" />
-        <span class="radio__control"></span>
-        </span>
-        <span class="radio__label">DECRYPT</span>
-</label>
-    <label class="radio" style="margin-left: 20%;">
-         <span class="radio__input">
-    <input type="radio" id="radio2" name="radio" />
-    <span class="radio__control"></span>
-  </span>
-         <span class="radio__label">ENCRYPT</span>
-    </label>
-
-
-    <div style="display: flex; flex-direction: column;" class="cont">
-        <div style="">
-            <label for="subject">
-                Ciphered Text:
-            </label>
-            <textarea id="subject" name="subject" style="height:200px" placeholder="">
-        </textarea>
+    <div style="display: flex; margin-left: 15%; justify-content: space-evenly; flex-direction: row;">
+        <div style="display: flex; flex-direction: column; padding: 2%; margin: 2%;">
+            <h1 class="header">
+                Introduction
+            </h1>
+            <p style="text-align: justify;">
+                In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift,
+                is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each
+                letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A,
+                E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
+            </p>
         </div>
-        <div class="shift">
-            <label for="shift">
-                Cipher Shift:
-            </label>
-            <input type="text" id="shift" placeholder="Cipher Shift Integer">
+        <div style="display: flex; flex-direction: column; padding: 2%; margin: 2%;">
+            <h1 class="header">
+                History
+            </h1>
+            <p style="text-align: justify;">
+                The Caesar cipher is named after Julius Caesar, who, according to Suetonius, used it with a shift of three (A becoming D when encrypting, and D becoming A when decrypting) to protect messages of military significance. While Caesar's was the first recorded use of this scheme, other substitution ciphers are known to have been used earlier.
+            </p>
         </div>
-        <div class="submit">
-            <input type="submit" value="Decipher" onclick="compute()">
-        </div>
-
     </div>
-    <div style="display: flex; flex-direction: column; justify-content: center;margin-left: 20%; margin-right: 10%;">
-    <span class="label">
-        Result:
-    </span>
-        <hr>
-    <div id="result" style="border: black 1px solid; padding: 2%; ">
+    <div style="display: flex; margin-left: 15%; justify-content: space-around; flex-direction: row; flex: 2 1">
+        <div style="display: flex; flex-direction: column; padding: 2%; margin: 2%;">
+            <h1 class="header">
+                How to break the Caesar Cipher
+            </h1>
+            <p style="text-align: justify;">
+                A cipher uses a "key" to disguise plaintext to make it unreadable. The Caesar shift cipher is one of the simplest and best-known methods of encryption.
+                It’s also the best first assumption when encountering a code. Knowledge of the frequency of letters and common placements of vowels helps break a more complicated code, not to mention the assumptions that should follow the frequency of the word t-h-e and the assumption that a single letter is probably “a” but not many code makers will give that letter up so easily.
+                The Caesar cipher can be easily broken even in a cipher text-only scenario. Two situations can be considered:
+
+            </p>
+            <ol>
+                <li style="text-align: justify;">An attacker knows (or guesses) that some sort of simple substitution cipher has been used, but not specifically that it is a Caesar scheme.</li>
+                <li style="text-align: justify;">An attacker knows that a Caesar cipher is in use, but does not know the shift value.</li>
+            </ol>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 2%; margin: 2%;">
+            <h1 class="header">
+                How to break the Caesar Cipher
+            </h1>
+            <p style="text-align: justify;">
+                In the first case, the cipher can be broken using the same techniques as for a general simple substitution cipher, such as frequency analysis or pattern words.[16] While solving, it is likely that an attacker will quickly notice the regularity in the solution and deduce that a Caesar cipher is the specific algorithm employed.
+                The distribution of letters in a typical sample of English language text has a distinctive and predictable shape. A Caesar shift "rotates" this distribution, and it is possible to determine the shift by examining the resultant frequency graph.
+                In the second instance, breaking the scheme is even more straightforward. Since there are only a limited number of possible shifts (25 in English), they can each be tested in turn in a brute force attack.
+            </p>
+        </div>
     </div>
-
-
-</div>
-
-
+<script>
+    $( document ).ready(function() {
+       $('.header').textillate();
+    });
+</script>
 </body>
-
 </html>
