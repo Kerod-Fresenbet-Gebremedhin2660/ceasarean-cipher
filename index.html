@@ -98,14 +98,14 @@
         <input type="radio" id="radio1" name="radio" />
         <span class="radio__control"></span>
         </span>
-        <span class="radio__label">DECRYPT</span>
+        <span class="radio__label">ENCRYPT</span>
 </label>
     <label class="radio" style="margin-left: 20%;">
          <span class="radio__input">
     <input type="radio" id="radio2" name="radio" />
     <span class="radio__control"></span>
   </span>
-         <span class="radio__label">ENCRYPT</span>
+         <span class="radio__label">DECRYPT</span>
     </label>
 
 
@@ -114,8 +114,7 @@
             <label for="subject">
                 Ciphered Text:
             </label>
-            <textarea id="subject" name="subject" style="height:200px" placeholder="">
-        </textarea>
+            <textarea id="subject" name="subject" style="height:200px" placeholder="Text here"></textarea>
         </div>
         <div class="shift">
             <label for="shift">
@@ -123,8 +122,8 @@
             </label>
             <input type="text" id="shift" placeholder="Cipher Shift Integer">
         </div>
-        <div class="submit">
-            <input type="submit" value="Decipher" onclick="compute()">
+        <div class="submit" style="flex: 2;">
+            <button type="submit" value="Compute" onclick="compute()" class="twoToneButton" id="submit" style="margin-top: 2%; margin-bottom: 2%;">Compute</button>
         </div>
 
     </div>
@@ -133,7 +132,7 @@
         Result:
     </span>
         <hr>
-    <div id="result" style="border: black 1px solid; padding: 2%; ">
+    <div id="result" style="border: #4CAF50 1px solid; padding: 2%; outline-color: #4CAF50;border-radius: 4px;">
     </div>
 
 
