@@ -1,12 +1,16 @@
-$('#submit').click(function () {
-    $('#submit').prop("value","Loading ...")
-})
-
-
+        async function changeVal() {
+            if (document.getElementById('radio1').checked) {
+                document.getElementById('submit').innerHTML = document.getElementById('radio1').value
+            } else if (document.getElementById('radio2').checked) {
+                document.getElementById('submit').innerHTML = document.getElementById('radio2').value
+            } else {
+                document.getElementById('submit').innerHTML = 'Compute'
+            }
+        }
 
     async function compute() {
         if(document.getElementById('radio1').checked === true){
-
+            document.getElementById('submit').innerHTML = 'Encrypt'
             let data_cipher = {
                 cipher_shift: parseInt(document.getElementById('shift').value),
                 to_be_ciphered_text: document.getElementById('subject').value
@@ -14,7 +18,7 @@ $('#submit').click(function () {
             let response = await encrypt(data_cipher)
             document.getElementById('result').innerHTML = response.result
         }else if (document.getElementById('radio2').checked === true){
-            document.getElementById('submit').innerHTML = 'Encrypt'
+            document.getElementById('submit').innerHTML = 'Decrypt'
             let data_decipher = {
                 cipher_shift: parseInt($('#shift').val()),
                 ciphered_text: $('#subject').val()
