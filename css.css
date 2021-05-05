@@ -165,7 +165,7 @@ select,
 textarea {
     width: 100%;
     padding: 12px;
-    border: 0px solid #ccc;
+    border: none;
     box-sizing: border-box;
     resize: none;
 }
@@ -258,4 +258,8 @@ input[type=submit] {
  nav::-webkit-scrollbar-thumb{
      width: 12px;
      background-color: #F5F5F5;
+ }
+
+ textarea:focus{
+     border:none;
  }
